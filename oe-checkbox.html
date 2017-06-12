@@ -18,7 +18,7 @@ form validations.
 <dom-module id="oe-checkbox">
   <template>
     <style>
-       :host {
+      :host {
         padding-top: 30px;
       }
 
@@ -58,7 +58,7 @@ form validations.
       'change': 'validate'
     },
     behaviors: [
-      baseUtils.FieldBehavior
+      OEUtils.FieldBehavior
     ],
     _validate: function () {
       this.setValidity(true, undefined);

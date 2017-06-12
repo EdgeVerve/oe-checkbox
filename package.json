@@ -8,7 +8,7 @@
     "lint:polymer": "polylint",
     "lint:js": "eslint . --fix --ext js,html --ignore-path .gitignore",
     "lint:css": "stylelint **/*.html",
-    "lint": "npm-run-all -c -n -s --silent editorconfig lint:*",
+    "lint": "npm-run-all -c -n -s --silent lint:*",
     "test": "wct",
     "postinstall": "bower install"
   },
