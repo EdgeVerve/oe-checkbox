@@ -6,7 +6,7 @@
 <link rel="import" href="../oe-field-behavior/oe-field-behavior.html">
 <link rel="import" href="../iron-selector/iron-selector.html">
 <link rel="import" href="../paper-checkbox/paper-checkbox.html">
-
+<link rel="import" href="../oe-i18n-msg/oe-i18n-msg.html">
 
 <!--
  `oe-checkbox-group` is a wrapper over `iron-selector` that auto-generates the underlying `paper-radio-button`s based on `choices` provided.
@@ -16,7 +16,7 @@
 <dom-module id="oe-checkbox-group">
   <template>
     <style>
-      :host {
+       :host {
         display: block;
 
         --paper-radio-group-item-padding: 2px;
@@ -46,15 +46,15 @@
 
     <paper-input-container always-float-label attr-for-value="selected">
       <label hidden$="[[!label]]">
-                <i18n-msg msgid=[[label]]>[[label]]</i18n-msg>
-                <template is="dom-if" if={{required}}><span class="required"> *</span></template>
-            </label>
+        <oe-i18n-msg msgid=[[label]]>[[label]]</oe-i18n-msg>
+        <template is="dom-if" if={{required}}><span class="required"> *</span></template>
+      </label>
 
       <iron-selector class="paper-input-input" id="ironSelector" selected-attribute="checked" disabled=[[disabled]] multi selected-values="{{value}}"
         attr-for-selected="x">
         <template is="dom-repeat" items={{listdata}}>
           <paper-checkbox x="[[_getValue(item)]]" disabled=[[disabled]]>
-            <i18n-msg msgid=[[_getDisplay(item)]]>[[_getDisplay(item)]]</i18n-msg>
+            <oe-i18n-msg msgid=[[_getDisplay(item)]]>[[_getDisplay(item)]]</oe-i18n-msg>
           </paper-checkbox>
         </template>
       </iron-selector>
