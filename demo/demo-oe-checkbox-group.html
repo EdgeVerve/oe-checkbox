@@ -12,16 +12,22 @@
 
   <title>oe-checkbox-group demo</title>
 
-  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
-  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-  <link rel="import" href="../../paper-styles/paper-styles.html">
-  <link rel="import" href="custom-styles.html">
-  <link rel="import" href="utils.html">
-
-  <link rel="import" href="../../oe-input/oe-json-input.html">
-  <link rel="import" href="../oe-checkbox-group.html">
+  <script type="module">
+    import '@polymer/iron-demo-helpers/demo-pages-shared-styles';
+    import '@polymer/iron-demo-helpers/demo-snippet';
+    import '@polymer/polymer/lib/elements/dom-bind';
+    import '@polymer/polymer/lib/elements/custom-style';
+    import '@polymer/iron-icon/iron-icon';
+    import '@polymer/iron-icons/iron-icons';
+  </script>
+  <script type="module" src="../../oe-input/oe-json-input.js"></script>
+  <script type="module" src="../oe-checkbox-group.js"></script>
+  <custom-style>
+    <style include="demo-pages-shared-styles">
+    </style>
+  </custom-style>
 </head>
 
 <body unresolved>
@@ -30,20 +36,19 @@
     <h3>Checkbox group</h3>
     <demo-snippet>
       <template>
-        <template is="dom-bind">
-          <oe-checkbox-group value="{{currentSelection}}" label="Make choice" class="layout-radio-button" listdata='["Apples","Oranges"]'>
-          </oe-checkbox-group>
-
-          <div>
-            <template is="dom-repeat" items={{currentSelection}}>
-              <span>{{item}}</span>
-            </template>
-          </div>
-
-          <oe-checkbox-group value="{{currentSelection}}" label="Disabled Radio Group" disabled class="layout-radio-button" listdata='["Apples","Oranges"]'>
-          </oe-checkbox-group>
-
-        </template>
+        <dom-bind>
+          <template>
+            <oe-checkbox-group value="{{currentSelection}}" label="Make choice" class="layout-radio-button" listdata='["Apples","Oranges"]'>
+            </oe-checkbox-group>
+            <div>
+              <template is="dom-repeat" items={{currentSelection}}>
+                <span>{{item}}</span>
+              </template>
+            </div>
+            <oe-checkbox-group value="{{currentSelection}}" label="Disabled Radio Group" disabled class="layout-radio-button" listdata='["Apples","Oranges"]'>
+            </oe-checkbox-group>
+          </template>
+        </dom-bind>
       </template>
     </demo-snippet>
 
@@ -58,48 +63,41 @@
     <h3>[Object] as listdata</h3>
     <demo-snippet>
       <template>
-        <template is="dom-bind">
-          <oe-checkbox-group value={{currentSelection}} listdata='[{"code":"A","description":"Apples"},{"code":"O","description":"Oranges"}]'>
-          </oe-checkbox-group>
+        <dom-bind>
+          <template>
+            <oe-checkbox-group value={{currentSelection}} listdata='[{"code":"A","description":"Apples"},{"code":"O","description":"Oranges"}]'>
+            </oe-checkbox-group>
+            <div>
+              <template is="dom-repeat" items={{currentSelection}}>
+                <span>{{item.code}}</span>-<span>{{item.description}}</span>
+              </template>
+            </div>
+          </template>
+        </dom-bind>
 
+        <dom-bind>
+          <template>
+            <oe-checkbox-group label="displayfield=description" value={{currentSelection}} displayproperty="description" listdata='[{"code":"A","description":"Apples"},{"code":"O","description":"Oranges"}]'>
+            </oe-checkbox-group>
+            <div>
+              <template is="dom-repeat" items={{currentSelection}}>
+                <span>{{item.code}}</span>-<span>{{item.description}}</span>
+              </template>
+            </div>
+          </template>
+        </dom-bind>
 
-
-          <div>
-            <template is="dom-repeat" items={{currentSelection}}>
-              <span>{{item.code}}</span>-<span>{{item.description}}</span>
-            </template>
-          </div>
-
-
-        </template>
-
-
-        <template is="dom-bind">
-          <oe-checkbox-group label="displayfield=description" value={{currentSelection}} displayproperty="description" listdata='[{"code":"A","description":"Apples"},{"code":"O","description":"Oranges"}]'>
-          </oe-checkbox-group>
-
-
-          <div>
-            <template is="dom-repeat" items={{currentSelection}}>
-              <span>{{item.code}}</span>-<span>{{item.description}}</span>
-            </template>
-          </div>
-
-        </template>
-
-        <template is="dom-bind">
-          <oe-checkbox-group label="valueproperty=code" value={{currentSelection}} displayproperty="description" valueproperty="code"
-            listdata='[{"code":"A","description":"Apples"},{"code":"O","description":"Oranges"}]'>
-          </oe-checkbox-group>
-
-          <div>
-            <template is="dom-repeat" items={{currentSelection}}>
-              <span>{{item}}</span>
-            </template>
-          </div>
-
-        </template>
-
+        <dom-bind>
+          <template>
+            <oe-checkbox-group label="valueproperty=code" value={{currentSelection}} displayproperty="description" valueproperty="code" listdata='[{"code":"A","description":"Apples"},{"code":"O","description":"Oranges"}]'>
+            </oe-checkbox-group>
+            <div>
+              <template is="dom-repeat" items={{currentSelection}}>
+                <span>{{item}}</span>
+              </template>
+            </div>
+          </template>
+        </dom-bind>
       </template>
     </demo-snippet>
 
