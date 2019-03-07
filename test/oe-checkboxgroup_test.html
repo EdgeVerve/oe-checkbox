@@ -1,0 +1,92 @@
+<!-- 
+  ©2016-2017 EdgeVerve Systems Limited (a fully owned Infosys subsidiary),
+  Bangalore, India. All Rights Reserved.
+-->
+<!doctype html>
+<html>
+
+<head>
+
+  <title>oe-checkbox-group tests</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="../node_modules/@polymer/test-fixture/test-fixture.js"></script>
+    <script src="../node_modules/chai/chai.js"></script>
+    <script src="../node_modules/mocha/mocha.js"></script>
+    <script src="../node_modules/wct-mocha/wct-mocha.js"></script>
+
+
+  <!-- Step 1: import the element to test -->
+  <script type="module" src="../oe-checkbox-group.js"></script>
+
+</head>
+
+<body>
+  <test-fixture id="basic">
+    <template>
+      <oe-checkbox-group required field-id="choices" label="Select Values" listdata='["Apples", "Oranges"]'></oe-checkbox-group>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="disabled">
+    <template>
+      <oe-checkbox-group label="Disabled Input" listdata='["Apples", "Oranges"]'></oe-checkbox-group>
+    </template>
+  </test-fixture>
+
+  <test-fixture id="complex">
+    <template>
+      <oe-checkbox-group label="Object Input" listdata='[{"c":"a","d":"Apples"},{"c":"o","d":"Oranges"}]'></oe-checkbox-group>
+    </template>
+  </test-fixture>
+
+  <script type="module">
+    import { DomApi } from "@polymer/polymer/lib/legacy/polymer.dom";
+    import '@polymer/iron-test-helpers/mock-interactions';
+
+    function getDom(node) {
+      return new DomApi(node);
+    }
+
+    suite('Basic', function () {
+
+      test('has value', function () {
+        var el = fixture('basic');
+        expect(el.value).to.deep.equal([]);
+      });
+
+      test('has label', function () {
+        var el = fixture('basic');
+        expect(el.label).to.exist.and.equal('Select Values');
+      });
+
+      test('validation', function () {
+        var el = fixture('basic');
+        el.validate();
+        expect(el.invalid).to.be.true;
+        el.push('value','"Apples"');
+        expect(el.invalid).to.be.false;
+      });
+
+      test('has fieldid', function () {
+        var el = fixture('basic');
+        assert.equal(el.fieldId, 'choices');
+      });
+
+      test('Object based checkbox', function (done) {
+        var el = fixture('complex');
+        flush(function(){
+          el.shadowRoot.querySelector('paper-checkbox').click();
+          assert.equal(el.value[0]["c"], 'a');
+          done();
+        });
+      });
+
+    });
+  </script>
+</body>
+
+</html>
