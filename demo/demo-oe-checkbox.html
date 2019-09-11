@@ -28,6 +28,11 @@
 
   <custom-style>
     <style include="demo-pages-shared-styles">
+      .custom-class-checkbox {
+        height: 32px;
+        padding: 15px 0px 0px 10px;
+        --paper-checkbox-ink-size: 35px;
+      }
     </style>
   </custom-style>
 </head>
@@ -42,6 +47,13 @@
         <oe-checkbox label="checkbox2" disabled></oe-checkbox>
         <oe-checkbox label="checkbox3"></oe-checkbox>
         <oe-checkbox label="checkbox4" value="true"></oe-checkbox>
+      </template>
+    </demo-snippet>
+    <h3>Checkbox with custom-style</h3>
+    <demo-snippet>
+      <template>
+        <oe-checkbox class="custom-class-checkbox" label="checkbox2"></oe-checkbox>
+        <oe-checkbox class="custom-class-checkbox" label="checkbox3" value="true"></oe-checkbox>
       </template>
     </demo-snippet>
   </div>
