@@ -7,17 +7,204 @@
       "path": "oe-checkbox-group.js",
       "properties": [
         {
+          "name": "errorPlaceholders",
+          "type": "Array | null | undefined",
+          "description": "i18n placeholders for the error",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 31,
+              "column": 8
+            },
+            "end": {
+              "line": 33,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Array"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "userErrorMessage",
+          "type": "Object | null | undefined",
+          "description": "User specified Custom error message\nIf userErrorMessage is defined, show appropriate user-error-message\nwhich is either an object\n   ```{\n      rangeOverflow:'Date should be prior',\n      default: 'Invalid Value in field'\n   }```\nor a string, 'Invalid value'\nSo check if specific error-coode is defined in user-error-message object\nIf not, see if 'default' error-code is defined\notherwise if user-error-message is string, show that error-message,\nif not, then resort to incoming-error-message.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 49,
+              "column": 8
+            },
+            "end": {
+              "line": 51,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Object"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "errorMessage",
+          "type": "string | null | undefined",
+          "description": "Error message displayed",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 54,
+              "column": 8
+            },
+            "end": {
+              "line": 57,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "attributeType": "String"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "_hasCustomMessage",
+          "type": "boolean | null | undefined",
+          "description": "Flag for Custom error message/code",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 60,
+              "column": 8
+            },
+            "end": {
+              "line": 63,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Boolean"
+            }
+          },
+          "defaultValue": "false",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "hidden",
+          "type": "boolean | null | undefined",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 65,
+              "column": 8
+            },
+            "end": {
+              "line": 69,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Boolean"
+            }
+          },
+          "defaultValue": "false",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "validationFunction",
+          "type": "string | null | undefined",
+          "description": "Custom validation function",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 72,
+              "column": 8
+            },
+            "end": {
+              "line": 74,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "String"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "validateOnInput",
+          "type": "boolean | null | undefined",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 76,
+              "column": 8
+            },
+            "end": {
+              "line": 78,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Boolean"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "fieldId",
+          "type": "string | null | undefined",
+          "description": "binding to property",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 81,
+              "column": 8
+            },
+            "end": {
+              "line": 81,
+              "column": 23
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "String"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
           "name": "label",
           "type": "string | null | undefined",
           "description": "label for control",
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 81,
+              "line": 85,
               "column": 6
             },
             "end": {
-              "line": 83,
+              "line": 87,
               "column": 7
             }
           },
@@ -34,11 +221,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 87,
+              "line": 91,
               "column": 6
             },
             "end": {
-              "line": 93,
+              "line": 97,
               "column": 7
             }
           },
@@ -57,11 +244,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 102,
+              "line": 106,
               "column": 6
             },
             "end": {
-              "line": 105,
+              "line": 109,
               "column": 7
             }
           },
@@ -79,11 +266,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 111,
+              "line": 115,
               "column": 6
             },
             "end": {
-              "line": 113,
+              "line": 117,
               "column": 7
             }
           },
@@ -100,11 +287,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 120,
+              "line": 124,
               "column": 6
             },
             "end": {
-              "line": 122,
+              "line": 126,
               "column": 7
             }
           },
@@ -121,11 +308,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 127,
+              "line": 131,
               "column": 6
             },
             "end": {
-              "line": 129,
+              "line": 133,
               "column": 7
             }
           },
@@ -142,11 +329,11 @@
           "privacy": "public",
           "sourceRange": {
             "start": {
-              "line": 134,
+              "line": 138,
               "column": 6
             },
             "end": {
-              "line": 136,
+              "line": 140,
               "column": 7
             }
           },
@@ -159,16 +346,92 @@
       ],
       "methods": [
         {
+          "name": "setValidity",
+          "description": "Sets the vality and errorMessage based on the input parameters and\nthe `userErrorMessage`",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 113,
+              "column": 4
+            },
+            "end": {
+              "line": 144,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "isValid",
+              "type": "boolean",
+              "description": "boolean flag for validation"
+            },
+            {
+              "name": "errorMessage",
+              "type": "string",
+              "description": "error message from the input element"
+            },
+            {
+              "name": "errorPlaceholders",
+              "type": "Array",
+              "description": "placeholders for errors"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "_setValidity",
+          "description": "Sets the 'invalid' flag and 'errorMessage'",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 152,
+              "column": 4
+            },
+            "end": {
+              "line": 159,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "isValid",
+              "type": "boolean",
+              "description": "boolean flag for validation"
+            },
+            {
+              "name": "errorMessage",
+              "type": "string",
+              "description": "error message from the input element"
+            },
+            {
+              "name": "errorPlaceholders",
+              "type": "Array",
+              "description": "placeholders for errors"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
           "name": "_validate",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 147,
+              "line": 151,
               "column": 2
             },
             "end": {
-              "line": 154,
+              "line": 158,
               "column": 3
             }
           },
@@ -176,16 +439,90 @@
           "params": []
         },
         {
+          "name": "validate",
+          "description": "Validate, overrides Paper-Input-Behavior's validate method\nUsed to set the validity based on core input element's validity",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 177,
+              "column": 4
+            },
+            "end": {
+              "line": 221,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "boolean",
+            "desc": "validity of core input element."
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "connectedCallback",
+          "description": "Registers the field through event , so the parent form can save it.\nBinds the 'validationFunction' property based on its type\nAdds eventListener to input based on 'validateOnInput'",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 228,
+              "column": 4
+            },
+            "end": {
+              "line": 249,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "hashFunc",
+          "description": "Generates a Hash for the given string.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 256,
+              "column": 4
+            },
+            "end": {
+              "line": 263,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "str",
+              "type": "string",
+              "description": "String for which Hash needs to be computed"
+            }
+          ],
+          "return": {
+            "type": "number",
+            "desc": "hash number for the given string"
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
           "name": "_valueChanged",
           "description": "",
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 155,
+              "line": 159,
               "column": 2
             },
             "end": {
-              "line": 159,
+              "line": 163,
               "column": 3
             }
           },
@@ -205,11 +542,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 160,
+              "line": 164,
               "column": 2
             },
             "end": {
-              "line": 166,
+              "line": 170,
               "column": 3
             }
           },
@@ -226,11 +563,11 @@
           "privacy": "protected",
           "sourceRange": {
             "start": {
-              "line": 167,
+              "line": 171,
               "column": 2
             },
             "end": {
-              "line": 173,
+              "line": 177,
               "column": 3
             }
           },
@@ -256,7 +593,7 @@
           "column": 0
         },
         "end": {
-          "line": 176,
+          "line": 180,
           "column": 1
         }
       },
@@ -265,15 +602,141 @@
       "name": "OeCheckboxGroup",
       "attributes": [
         {
+          "name": "error-placeholders",
+          "description": "i18n placeholders for the error",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 31,
+              "column": 8
+            },
+            "end": {
+              "line": 33,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "Array | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "user-error-message",
+          "description": "User specified Custom error message\nIf userErrorMessage is defined, show appropriate user-error-message\nwhich is either an object\n   ```{\n      rangeOverflow:'Date should be prior',\n      default: 'Invalid Value in field'\n   }```\nor a string, 'Invalid value'\nSo check if specific error-coode is defined in user-error-message object\nIf not, see if 'default' error-code is defined\notherwise if user-error-message is string, show that error-message,\nif not, then resort to incoming-error-message.",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 49,
+              "column": 8
+            },
+            "end": {
+              "line": 51,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "Object | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "error-message",
+          "description": "Error message displayed",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 54,
+              "column": 8
+            },
+            "end": {
+              "line": 57,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "string | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "hidden",
+          "description": "",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 65,
+              "column": 8
+            },
+            "end": {
+              "line": 69,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "boolean | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "validation-function",
+          "description": "Custom validation function",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 72,
+              "column": 8
+            },
+            "end": {
+              "line": 74,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "string | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "validate-on-input",
+          "description": "",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 76,
+              "column": 8
+            },
+            "end": {
+              "line": 78,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "boolean | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "field-id",
+          "description": "binding to property",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 81,
+              "column": 8
+            },
+            "end": {
+              "line": 81,
+              "column": 23
+            }
+          },
+          "metadata": {},
+          "type": "string | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
           "name": "label",
           "description": "label for control",
           "sourceRange": {
             "start": {
-              "line": 81,
+              "line": 85,
               "column": 6
             },
             "end": {
-              "line": 83,
+              "line": 87,
               "column": 7
             }
           },
@@ -285,11 +748,11 @@
           "description": "value, this control is bound to.",
           "sourceRange": {
             "start": {
-              "line": 87,
+              "line": 91,
               "column": 6
             },
             "end": {
-              "line": 93,
+              "line": 97,
               "column": 7
             }
           },
@@ -301,11 +764,11 @@
           "description": "listdata to display as Checkbox.\n* When specified as array of premitives (string/number), leave displayproperty and valueproperty as undefined.\n* When specified as array of Objects/{d:...,v:...}, specify displayproperty to control which property is displayed\n   as label on the choices. When  valueproperty is not defined, enire member object is set as `value`, otherwise\n   specified property reflects into `value`.",
           "sourceRange": {
             "start": {
-              "line": 102,
+              "line": 106,
               "column": 6
             },
             "end": {
-              "line": 105,
+              "line": 109,
               "column": 7
             }
           },
@@ -317,11 +780,11 @@
           "description": "When `listdata` is specified as array of Objects/{d:...,v:...}, displayproperty controls which property\nis displayed as label on the choices.",
           "sourceRange": {
             "start": {
-              "line": 111,
+              "line": 115,
               "column": 6
             },
             "end": {
-              "line": 113,
+              "line": 117,
               "column": 7
             }
           },
@@ -333,11 +796,11 @@
           "description": "When `listdata` is specified as array of Objects/{d:...,v:...}\n* If valueproperty is not defined, entire member object is set as `value`,\n* otherwise specified `valueproperty` reflects into `value`.",
           "sourceRange": {
             "start": {
-              "line": 120,
+              "line": 124,
               "column": 6
             },
             "end": {
-              "line": 122,
+              "line": 126,
               "column": 7
             }
           },
@@ -349,11 +812,11 @@
           "description": "Disabled",
           "sourceRange": {
             "start": {
-              "line": 127,
+              "line": 131,
               "column": 6
             },
             "end": {
-              "line": 129,
+              "line": 133,
               "column": 7
             }
           },
@@ -365,11 +828,11 @@
           "description": "Required",
           "sourceRange": {
             "start": {
-              "line": 134,
+              "line": 138,
               "column": 6
             },
             "end": {
-              "line": 136,
+              "line": 140,
               "column": 7
             }
           },
@@ -378,6 +841,27 @@
         }
       ],
       "events": [
+        {
+          "type": "CustomEvent",
+          "name": "oe-field-error",
+          "description": "Fired when the field is invalid",
+          "metadata": {},
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "oe-field-ok",
+          "description": "Fired when the field is valid",
+          "metadata": {},
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "register-field",
+          "description": "Fired when the element is attached to DOM to register the element",
+          "metadata": {},
+          "inheritedFrom": "OEFieldMixin"
+        },
         {
           "type": "CustomEvent",
           "name": "value-changed",
@@ -407,6 +891,193 @@
       "path": "oe-checkbox.js",
       "properties": [
         {
+          "name": "errorPlaceholders",
+          "type": "Array | null | undefined",
+          "description": "i18n placeholders for the error",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 31,
+              "column": 8
+            },
+            "end": {
+              "line": 33,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Array"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "userErrorMessage",
+          "type": "Object | null | undefined",
+          "description": "User specified Custom error message\nIf userErrorMessage is defined, show appropriate user-error-message\nwhich is either an object\n   ```{\n      rangeOverflow:'Date should be prior',\n      default: 'Invalid Value in field'\n   }```\nor a string, 'Invalid value'\nSo check if specific error-coode is defined in user-error-message object\nIf not, see if 'default' error-code is defined\notherwise if user-error-message is string, show that error-message,\nif not, then resort to incoming-error-message.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 49,
+              "column": 8
+            },
+            "end": {
+              "line": 51,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Object"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "errorMessage",
+          "type": "string | null | undefined",
+          "description": "Error message displayed",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 54,
+              "column": 8
+            },
+            "end": {
+              "line": 57,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "notify": true,
+              "attributeType": "String"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "_hasCustomMessage",
+          "type": "boolean | null | undefined",
+          "description": "Flag for Custom error message/code",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 60,
+              "column": 8
+            },
+            "end": {
+              "line": 63,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Boolean"
+            }
+          },
+          "defaultValue": "false",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "hidden",
+          "type": "boolean | null | undefined",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 65,
+              "column": 8
+            },
+            "end": {
+              "line": 69,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Boolean"
+            }
+          },
+          "defaultValue": "false",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "validationFunction",
+          "type": "string | null | undefined",
+          "description": "Custom validation function",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 72,
+              "column": 8
+            },
+            "end": {
+              "line": 74,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "String"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "validateOnInput",
+          "type": "boolean | null | undefined",
+          "description": "",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 76,
+              "column": 8
+            },
+            "end": {
+              "line": 78,
+              "column": 9
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "Boolean"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "fieldId",
+          "type": "string | null | undefined",
+          "description": "binding to property",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 81,
+              "column": 8
+            },
+            "end": {
+              "line": 81,
+              "column": 23
+            }
+          },
+          "metadata": {
+            "polymer": {
+              "attributeType": "String"
+            }
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
           "name": "label",
           "type": "string | null | undefined",
           "description": "the label",
@@ -474,6 +1145,82 @@
       ],
       "methods": [
         {
+          "name": "setValidity",
+          "description": "Sets the vality and errorMessage based on the input parameters and\nthe `userErrorMessage`",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 113,
+              "column": 4
+            },
+            "end": {
+              "line": 144,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "isValid",
+              "type": "boolean",
+              "description": "boolean flag for validation"
+            },
+            {
+              "name": "errorMessage",
+              "type": "string",
+              "description": "error message from the input element"
+            },
+            {
+              "name": "errorPlaceholders",
+              "type": "Array",
+              "description": "placeholders for errors"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "_setValidity",
+          "description": "Sets the 'invalid' flag and 'errorMessage'",
+          "privacy": "protected",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 152,
+              "column": 4
+            },
+            "end": {
+              "line": 159,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "isValid",
+              "type": "boolean",
+              "description": "boolean flag for validation"
+            },
+            {
+              "name": "errorMessage",
+              "type": "string",
+              "description": "error message from the input element"
+            },
+            {
+              "name": "errorPlaceholders",
+              "type": "Array",
+              "description": "placeholders for errors"
+            }
+          ],
+          "return": {
+            "type": "void"
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
           "name": "_validate",
           "description": "Local validations to always set field validation as true.",
           "privacy": "protected",
@@ -495,6 +1242,29 @@
           }
         },
         {
+          "name": "validate",
+          "description": "Validate, overrides Paper-Input-Behavior's validate method\nUsed to set the validity based on core input element's validity",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 177,
+              "column": 4
+            },
+            "end": {
+              "line": 221,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [],
+          "return": {
+            "type": "boolean",
+            "desc": "validity of core input element."
+          },
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
           "name": "connectedCallback",
           "description": "Connected Callback to initiate 'change' listener with validation function.",
           "privacy": "public",
@@ -513,6 +1283,35 @@
           "return": {
             "type": "void"
           }
+        },
+        {
+          "name": "hashFunc",
+          "description": "Generates a Hash for the given string.",
+          "privacy": "public",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 256,
+              "column": 4
+            },
+            "end": {
+              "line": 263,
+              "column": 5
+            }
+          },
+          "metadata": {},
+          "params": [
+            {
+              "name": "str",
+              "type": "string",
+              "description": "String for which Hash needs to be computed"
+            }
+          ],
+          "return": {
+            "type": "number",
+            "desc": "hash number for the given string"
+          },
+          "inheritedFrom": "OEFieldMixin"
         }
       ],
       "staticMethods": [],
@@ -537,6 +1336,132 @@
       "superclass": "HTMLElement",
       "name": "OeCheckbox",
       "attributes": [
+        {
+          "name": "error-placeholders",
+          "description": "i18n placeholders for the error",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 31,
+              "column": 8
+            },
+            "end": {
+              "line": 33,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "Array | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "user-error-message",
+          "description": "User specified Custom error message\nIf userErrorMessage is defined, show appropriate user-error-message\nwhich is either an object\n   ```{\n      rangeOverflow:'Date should be prior',\n      default: 'Invalid Value in field'\n   }```\nor a string, 'Invalid value'\nSo check if specific error-coode is defined in user-error-message object\nIf not, see if 'default' error-code is defined\notherwise if user-error-message is string, show that error-message,\nif not, then resort to incoming-error-message.",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 49,
+              "column": 8
+            },
+            "end": {
+              "line": 51,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "Object | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "error-message",
+          "description": "Error message displayed",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 54,
+              "column": 8
+            },
+            "end": {
+              "line": 57,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "string | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "hidden",
+          "description": "",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 65,
+              "column": 8
+            },
+            "end": {
+              "line": 69,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "boolean | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "validation-function",
+          "description": "Custom validation function",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 72,
+              "column": 8
+            },
+            "end": {
+              "line": 74,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "string | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "validate-on-input",
+          "description": "",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 76,
+              "column": 8
+            },
+            "end": {
+              "line": 78,
+              "column": 9
+            }
+          },
+          "metadata": {},
+          "type": "boolean | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "name": "field-id",
+          "description": "binding to property",
+          "sourceRange": {
+            "file": "../oe-mixins/oe-field-mixin.js",
+            "start": {
+              "line": 81,
+              "column": 8
+            },
+            "end": {
+              "line": 81,
+              "column": 23
+            }
+          },
+          "metadata": {},
+          "type": "string | null | undefined",
+          "inheritedFrom": "OEFieldMixin"
+        },
         {
           "name": "label",
           "description": "the label",
@@ -587,6 +1512,27 @@
         }
       ],
       "events": [
+        {
+          "type": "CustomEvent",
+          "name": "oe-field-error",
+          "description": "Fired when the field is invalid",
+          "metadata": {},
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "oe-field-ok",
+          "description": "Fired when the field is valid",
+          "metadata": {},
+          "inheritedFrom": "OEFieldMixin"
+        },
+        {
+          "type": "CustomEvent",
+          "name": "register-field",
+          "description": "Fired when the element is attached to DOM to register the element",
+          "metadata": {},
+          "inheritedFrom": "OEFieldMixin"
+        },
         {
           "type": "CustomEvent",
           "name": "value-changed",
