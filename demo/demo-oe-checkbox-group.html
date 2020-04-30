@@ -26,6 +26,20 @@
   <script type="module" src="../oe-checkbox-group.js"></script>
   <custom-style>
     <style include="demo-pages-shared-styles">
+      .custom-class-checkboxgroup {
+        --paper-checkbox-ink-size: 35px;
+        padding: 0px 10px;
+        --paper-input-container: {
+          padding: 0px;
+        }
+        --paper-font-caption: {
+          line-height: 15px;
+        }
+        --oe-checkbox: {
+          padding-right: 15px;
+          padding-bottom: 2px;
+        }
+      }
     </style>
   </custom-style>
 </head>
@@ -69,7 +83,8 @@
             </oe-checkbox-group>
             <div>
               <template is="dom-repeat" items={{currentSelection}}>
-                <span>{{item.code}}</span>-<span>{{item.description}}</span>
+                <span>{{item.code}}</span>-
+                <span>{{item.description}}</span>
               </template>
             </div>
           </template>
@@ -81,7 +96,8 @@
             </oe-checkbox-group>
             <div>
               <template is="dom-repeat" items={{currentSelection}}>
-                <span>{{item.code}}</span>-<span>{{item.description}}</span>
+                <span>{{item.code}}</span>-
+                <span>{{item.description}}</span>
               </template>
             </div>
           </template>
@@ -89,7 +105,8 @@
 
         <dom-bind>
           <template>
-            <oe-checkbox-group label="valueproperty=code" value={{currentSelection}} displayproperty="description" valueproperty="code" listdata='[{"code":"A","description":"Apples"},{"code":"O","description":"Oranges"}]'>
+            <oe-checkbox-group label="valueproperty=code" value={{currentSelection}} displayproperty="description" valueproperty="code"
+              listdata='[{"code":"A","description":"Apples"},{"code":"O","description":"Oranges"}]'>
             </oe-checkbox-group>
             <div>
               <template is="dom-repeat" items={{currentSelection}}>
@@ -100,7 +117,20 @@
         </dom-bind>
       </template>
     </demo-snippet>
-
+    <h3>Checkbox group with custom-style</h3>
+    <demo-snippet>
+      <template>
+        <dom-bind>
+          <template>
+            <oe-checkbox-group class="custom-class-checkboxgroup" value="{{currentSelection}}" label="Make choice" class="layout-radio-button"
+              listdata='["Apples","Oranges"]'>
+            </oe-checkbox-group>
+        </dom-bind>
+        <oe-checkbox-group class="custom-class-checkboxgroup" value='["Oranges"]' label="Pre selected" class="layout-radio-button"
+          listdata='["Apples","Oranges"]'>
+        </oe-checkbox-group>
+        </template>
+    </demo-snippet>
   </div>
 
 </body>

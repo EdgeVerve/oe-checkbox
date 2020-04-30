@@ -54,6 +54,9 @@ class OeCheckboxGroup extends mixinBehaviors([], PolymerElement) {
         color: var(--paper-input-container-invalid-color, var(--google-red-500));
         @apply --oe-required-mixin;
       }
+      .checkbox {
+        @apply --oe-checkbox;
+      }
     </style>
 
     <paper-input-container always-float-label>
@@ -65,7 +68,7 @@ class OeCheckboxGroup extends mixinBehaviors([], PolymerElement) {
       <iron-selector slot="input" class="paper-input-input" id="ironSelector" selected-attribute="checked" disabled=[[disabled]] multi selected-values="{{value}}"
         attr-for-selected="x">
         <template is="dom-repeat" items={{listdata}}>
-          <paper-checkbox x="[[_getValue(item)]]" disabled=[[disabled]]>
+          <paper-checkbox class="checkbox" x="[[_getValue(item)]]" disabled=[[disabled]]>
             <oe-i18n-msg msgid=[[_getDisplay(item)]]>[[_getDisplay(item)]]</oe-i18n-msg>
           </paper-checkbox>
         </template>
